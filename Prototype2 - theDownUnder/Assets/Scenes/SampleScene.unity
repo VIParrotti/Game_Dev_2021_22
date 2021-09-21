@@ -226,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101603168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.88, y: -3.2, z: 0}
+  m_LocalPosition: {x: -8.65, y: -3.28, z: 0}
   m_LocalScale: {x: 0.20607454, y: 0.6727196, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163523620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0087, y: -4.54, z: 0}
+  m_LocalPosition: {x: 0.17, y: -4.54, z: 0}
   m_LocalScale: {x: 3.6829026, y: 0.1879, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -527,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566993865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.906, y: 3.216, z: 0}
+  m_LocalPosition: {x: -8.64, y: 3.216, z: 0}
   m_LocalScale: {x: 0.1940054, y: 0.69694453, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -636,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731670982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.93, y: 2.95, z: 0}
+  m_LocalPosition: {x: 8.66, y: 2.95, z: 0}
   m_LocalScale: {x: 0.1940054, y: 0.69694453, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -745,7 +745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028715199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.248, y: 4.527, z: 0}
+  m_LocalPosition: {x: 6.39, y: 4.56, z: 0}
   m_LocalScale: {x: 1.2546003, y: 0.1879, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -816,7 +816,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1088039281
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -876,7 +876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088039278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.725877, y: -0.724648, z: 0}
+  m_LocalPosition: {x: 2.76, y: -2.45, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -985,7 +985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174410090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.9, y: -3.05, z: 0}
+  m_LocalPosition: {x: 8.72, y: -3.33, z: 0}
   m_LocalScale: {x: 0.1940054, y: 0.69694453, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1094,7 +1094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177464587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0873, y: 4.55, z: 0}
+  m_LocalPosition: {x: -5.94, y: 4.55, z: 0}
   m_LocalScale: {x: 1.2242984, y: 0.1879, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1112,6 +1112,7 @@ GameObject:
   - component: {fileID: 1972232822}
   - component: {fileID: 1972232821}
   - component: {fileID: 1972232820}
+  - component: {fileID: 1972232824}
   m_Layer: 0
   m_Name: Link
   m_TagString: Player
@@ -1139,7 +1140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1972232821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1225,9 +1226,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972232819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.88, y: 1.83, z: 0}
+  m_LocalPosition: {x: -4.12, y: 1.89, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972232824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972232819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb83b2cea19b4a718c2de95ccea9344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  turnSpeed: 10
+  hInput: 0
+  vInput: 0
+  xRange: 8.91
+  yRange: 4.46
