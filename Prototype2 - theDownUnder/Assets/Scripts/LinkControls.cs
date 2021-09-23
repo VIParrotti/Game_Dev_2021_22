@@ -13,6 +13,9 @@ public class LinkControls : MonoBehaviour
     public float xRange = 8.91f;
     public float yRange = 4.46f;
 
+    public GameObject bullet;
+    private Vector3 offset = new Vector3(0,1,0);
+
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +44,11 @@ public class LinkControls : MonoBehaviour
         if(transform.position.y < -yRange)
         {
             transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bullet, transform.position + offset, bullet.transform.rotation);
         }
     
     }
