@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     {
         if(other.CompareTag("Player") && gameManager.hasKey)
         {
-            print("You have unlocked the door!")
+            print("You have unlocked the door!");
         }
     }
 }
