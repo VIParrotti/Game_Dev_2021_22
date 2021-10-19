@@ -24,7 +24,7 @@ public class BeanController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Weapon>();
         //disable cursor
-        Cursor.lockState = CursorLockMode.lock;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
