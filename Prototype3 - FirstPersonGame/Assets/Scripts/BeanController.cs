@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class BeanController : MonoBehaviour
 {
-    //movement variables
+    [Header("Movement")]
     public float moveSpeed = 5.0f;
     public float jumpForce;
-    //camera variables
+
+    [Header("Camera")]
     public float lookSensitivity;  //mouse look sensitivity
     public float maxLookX;  //lowest down position we can look
     public float minLookX;  //highest up we can look
     private float rotX;  //current X rotation of the camera
-    //gameObjects and components
+
+    [Header("Game Objects & Components")]
     private Camera cam;
     private Rigidbody rb;
     private Weapon weapon;
+    
+
+    [Header("Stats")]
+    public int curHP;
+    public int maxHP;
+    public int damage;
 
     void Awake()
     {
@@ -26,6 +34,19 @@ public class BeanController : MonoBehaviour
         //disable cursor
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void TakeDamage(int damage)
+    {
+        curHP -= damage;
+        if(curHP <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        
+    }
+
 
     // Update is called once per frame
     void Update()
