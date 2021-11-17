@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    // What game object is pooled
     public GameObject objPrefab;
+    // How many game objects to pool
     public int createOnStart;
-
+    // Store all of the pooled game objects (Projectiles)
     private List<GameObject> pooledObjs = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -20,11 +22,14 @@ public class ObjectPool : MonoBehaviour
 
     GameObject CreateNewObject()
     {
-        GameObject obj = Instantiate(objPrefab);
-        obj.SetActive(false);
-        pooledObjs.Add(obj);
-
-        return obj;
+        // Create Gameobject
+       GameObject obj = Instantiate(objPrefab);
+       // Deactivate object
+       obj.SetActive(false); 
+       //Add object to the pool of existing objects
+       pooledObjs.Add(obj);
+       
+       return obj;
     }
 
     public GameObject GetObject()
@@ -35,17 +40,10 @@ public class ObjectPool : MonoBehaviour
         {
             obj = CreateNewObject();
         }
-           
+
         obj.SetActive(true);
 
         return obj;
     }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+

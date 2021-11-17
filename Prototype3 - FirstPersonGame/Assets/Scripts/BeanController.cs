@@ -23,7 +23,7 @@ public class BeanController : MonoBehaviour
     [Header("Stats")]
     public int curHP;
     public int maxHP;
-    public int damage;
+    //public int damage;
 
     void Awake()
     {
@@ -35,22 +35,36 @@ public class BeanController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    void Start()
+    {
+        //Initialize UI
+        GameUI.instance.UpdatePhil(curHP, maxHP);
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+
+    }
+
     public void TakeDamage(int damage)
     {
         curHP -= damage;
         if(curHP <= 0)
             Die();
+        GameUI.instance.UpdatePhil(curHP, maxHP);
     }
 
     void Die()
     {
-        
+        GameManager.instance.LoseGame();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        //do nothing when pause = true
+        if(GameManager.instance.gamePaused == true)
+            return;
+
         Move();
         CamLook();
         if(Input.GetButtonDown("Jump"))
@@ -98,11 +112,13 @@ public class BeanController : MonoBehaviour
     public void GiveHealth(int amountToGive)
     {
         curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
+        GameUI.instance.UpdatePhil(curHP, maxHp);
     }
 
     public void GiveAmmo(int amountToGive)
     {
         weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
     }
     
 }

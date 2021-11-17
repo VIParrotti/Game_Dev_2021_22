@@ -6,23 +6,27 @@ public class Weapon : MonoBehaviour
 {
     public ObjectPool bulletPool;
     public Transform muzzle;
+
+    public float bulletSpeed;
+
     public int curAmmo;
     public int maxAmmo;
     public bool infiniteAmmo;
+
+
     public float shootRate;
-    public float bulletSpeed;
     private float lastShootTime;
     private bool isPlayer;
 
     void Awake()
     {
-        //are we attached to the player?
+        // are we attached to the player?
         if(GetComponent<BeanController>())
         {
             isPlayer = true;
         }
-    }
-    
+    } 
+
     public bool CanShoot()
     {
         if(Time.time - lastShootTime >= shootRate)
@@ -30,19 +34,20 @@ public class Weapon : MonoBehaviour
             if(curAmmo > 0 || infiniteAmmo == true)
                 return true;
         }
+
         return false;
-    }
+    } 
 
     public void Shoot()
     {
-        lastShootTime = Time.time;
-        curAmmo--;
-        
-        GameObject bullet = bulletPool.GetObject();
-        bullet.transform.position = muzzle.position;
-        bullet.transform.rotation = muzzle.rotation;
+      lastShootTime = Time.time;
+      curAmmo--; 
 
-        //set velocity
-        bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
+      GameObject bullet = bulletPool.GetObject();
+      bullet.transform.position = muzzle.position;
+      bullet.transform.rotation = muzzle.rotation;
+
+      // set the velocity
+      bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed; 
     }
 }

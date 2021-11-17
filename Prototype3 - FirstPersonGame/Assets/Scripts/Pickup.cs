@@ -16,7 +16,7 @@ public class Pickup : MonoBehaviour
     [Header("Bobbing Animation")]
     public float rotationSpeed;
     public float bobSpeed;
-    public float bobType;
+    public float bobHeight;
 
     private Vector3 startPos;
     private bool bobUp;
@@ -53,7 +53,7 @@ public class Pickup : MonoBehaviour
         //rotating
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
-        Vector3 offset = (bobUp == true ? new Vector3(0,bobHeight/2, 0)) : new Vector3(0, -bobHeight/2, 0);
+        Vector3 offset = (bobUp == true ? new Vector3(0,bobHeight/2, 0) : new Vector3(0, -bobHeight/2, 0));
         transform.position = Vector3.MoveTowards(transform.position, startPos + offset, bobSpeed * Time.deltaTime);
 
         if(transform.position == startPos + offset)
