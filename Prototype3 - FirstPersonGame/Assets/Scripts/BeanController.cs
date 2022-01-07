@@ -112,7 +112,7 @@ public class BeanController : MonoBehaviour
     public void GiveHealth(int amountToGive)
     {
         curHP = Mathf.Clamp(curHP + amountToGive, 0, maxHP);
-        GameUI.instance.UpdatePhil(curHP, maxHp);
+        GameUI.instance.UpdatePhil(curHP, maxHP);
     }
 
     public void GiveAmmo(int amountToGive)

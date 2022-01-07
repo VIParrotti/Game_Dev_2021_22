@@ -16,12 +16,7 @@ public class Bullet : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-         //Create the hit particle effect
-        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
         
-        //destroy hit particle
-        Destroy(obj, 0.5f);
-
         //what did we hit?
         if(other.CompareTag("Player"))
             other.GetComponent<BeanController>().TakeDamage(damage);
@@ -31,6 +26,12 @@ public class Bullet : MonoBehaviour
         
         //Disable bullet
         gameObject.SetActive(false);
+
+         //Create the hit particle effect
+        GameObject obj = Instantiate(hitParticle, transform.position, Quaternion.identity);
+        
+        //destroy hit particle
+        Destroy(obj, 0.5f);
     }
     
 

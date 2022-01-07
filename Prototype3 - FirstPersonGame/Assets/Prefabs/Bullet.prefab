@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   lifetime: 0.5
-  hitParticle: {fileID: 1528900530743297453}
+  hitParticle: {fileID: 0}
 --- !u!54 &6660268596101330779
 Rigidbody:
   m_ObjectHideFlags: 0

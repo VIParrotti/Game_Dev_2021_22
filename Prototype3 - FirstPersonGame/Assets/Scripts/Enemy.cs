@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        curHP = maxHP
+        curHP = maxHP;
 
         weapon = GetComponent<Weapon>();
         target = FindObjectOfType<BeanController>().gameObject;
